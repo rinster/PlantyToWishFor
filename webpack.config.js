@@ -12,8 +12,14 @@ module.exports = {
     },
     plugins: [ 
         new HtmlWebpackPlugin({
+           title: 'Planty to Wish App',
            filename: 'index.html',
-           template: './src/index.html'  
+           template: './src/index.html',
+           inject: true,
+           minify: {
+               removeComments: true,
+               collapseWhitespace: false
+           }  
         })
     ],
     // Babel setup ===========================
@@ -23,7 +29,12 @@ module.exports = {
                 test: /\.js$/, 
                 exclude: /node_modules/, 
                 use: {
-                    loader: 'babel-loader' 
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            'babel-preset-env'
+                        ]
+                    } 
                 }
             }
         ]
