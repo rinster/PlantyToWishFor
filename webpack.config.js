@@ -30,7 +30,7 @@ module.exports = {
         new FixStyleOnlyEntriesPlugin(),
         new OptimizeCssAssetsPlugin({})
     ],
-    
+
     module: {
         rules: [
             {
@@ -52,6 +52,18 @@ module.exports = {
                 'css-loader',
                 'sass-loader',
                 'postcss-loader'
+                ]
+            },
+            {   // Handle Loading of Static Resources
+                test: /\.(png|jpg|gif|svg)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name:'[name].[ext]',
+                            outputPath: 'assets/images'
+                        }
+                    }
                 ]
             }
         ]
