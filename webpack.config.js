@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     entry: ['babel-polyfill','./src/js/index.js'],
@@ -28,7 +29,11 @@ module.exports = {
             filename: 'style.css'
         }),
         new FixStyleOnlyEntriesPlugin(),
-        new OptimizeCssAssetsPlugin({})
+        new OptimizeCssAssetsPlugin({}),
+        new CopyWebpackPlugin([{
+            from: './src/assets/images',
+            to: 'assets/images'
+        }])
     ],
 
     module: {
@@ -54,7 +59,7 @@ module.exports = {
                 'postcss-loader'
                 ]
             },
-            {   // Handle Loading of Static Resources
+            {   // Handle Loading of Static Resources =============
                 test: /\.(png|jpg|gif|svg)$/,
                 use: [
                     {

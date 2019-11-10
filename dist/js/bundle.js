@@ -3838,6 +3838,17 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 
 /***/ }),
 
+/***/ "./src/assets/images/PMelano.jpg":
+/*!***************************************!*\
+  !*** ./src/assets/images/PMelano.jpg ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"assets/images/PMelano.jpg\";\n\n//# sourceURL=webpack:///./src/assets/images/PMelano.jpg?");
+
+/***/ }),
+
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
@@ -3846,7 +3857,7 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _header = __webpack_require__(/*! ./models/header */ \"./src/js/models/header.js\");\n\n__webpack_require__(/*! ../styles/scss/main.scss */ \"./src/styles/scss/main.scss\");\n\n//IMPORT sass\n\nvar header = new _header.Header();\nvar firstHeading = header.getFirstHeading();\nconsole.log(firstHeading);\n\n//Testing\nconsole.log('Hello');\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("\n\nvar _header = __webpack_require__(/*! ./models/header */ \"./src/js/models/header.js\");\n\n__webpack_require__(/*! ../styles/scss/main.scss */ \"./src/styles/scss/main.scss\");\n\nvar _PMelano = __webpack_require__(/*! ../assets/images/PMelano.jpg */ \"./src/assets/images/PMelano.jpg\");\n\nvar _PMelano2 = _interopRequireDefault(_PMelano);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\n//image load test\n\nvar header = new _header.Header(); //IMPORT sass\n\nvar firstHeading = header.getFirstHeading();\nconsole.log(firstHeading);\n\n//Image import test\ndocument.getElementById('PhiloMelano').setAttribute('src', _PMelano2.default);\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ }),
 
