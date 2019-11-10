@@ -3846,7 +3846,30 @@ eval("var g;\n\n// This works in non-strict mode\ng = (function() {\n\treturn th
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n//Testing\nconsole.log('Hello');\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("\n\nvar _header = __webpack_require__(/*! ./models/header */ \"./src/js/models/header.js\");\n\n__webpack_require__(/*! ../styles/scss/main.scss */ \"./src/styles/scss/main.scss\");\n\n//IMPORT sass\n\nvar header = new _header.Header();\nvar firstHeading = header.getFirstHeading();\nconsole.log(firstHeading);\n\n//Testing\nconsole.log('Hello');\n\n//# sourceURL=webpack:///./src/js/index.js?");
+
+/***/ }),
+
+/***/ "./src/js/models/header.js":
+/*!*********************************!*\
+  !*** ./src/js/models/header.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n    value: true\n});\n\nvar _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Header = exports.Header = function () {\n    function Header() {\n        _classCallCheck(this, Header);\n\n        console.log('This is a header constructor');\n    }\n\n    _createClass(Header, [{\n        key: 'getFirstHeading',\n        value: function getFirstHeading() {\n            return 'Webpack starter page';\n        }\n    }]);\n\n    return Header;\n}();\n\n//# sourceURL=webpack:///./src/js/models/header.js?");
+
+/***/ }),
+
+/***/ "./src/styles/scss/main.scss":
+/*!***********************************!*\
+  !*** ./src/styles/scss/main.scss ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/styles/scss/main.scss?");
 
 /***/ }),
 
