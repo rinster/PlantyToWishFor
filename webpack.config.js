@@ -1,7 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
     entry: ['babel-polyfill','./src/js/index.js'],
@@ -25,15 +26,17 @@ module.exports = {
         }),
         new MiniCssExtractPlugin({
             filename: 'style.css'
-        })
+        }),
+        new FixStyleOnlyEntriesPlugin(),
+        new OptimizeCssAssetsPlugin({})
     ],
-    // Babel setup ===========================
+    
     module: {
         rules: [
             {
                 test: /\.js$/, 
                 exclude: /node_modules/, 
-                use: {
+                use: {// Babel setup ===========================
                     loader: 'babel-loader',
                     options: {
                         presets: [
@@ -44,7 +47,7 @@ module.exports = {
             },
             {
                 test: /.css$|.scss$/,                
-                use:[                    
+                use:[// SASS -> CSS -> Autoprefixer setup ========                    
                 MiniCssExtractPlugin.loader,                  
                 'css-loader',
                 'sass-loader',
