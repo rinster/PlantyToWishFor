@@ -30,10 +30,16 @@ module.exports = {
         }),
         new FixStyleOnlyEntriesPlugin(),
         new OptimizeCssAssetsPlugin({}),
-        new CopyWebpackPlugin([{
-            from: './src/assets/images',
-            to: 'assets/images'
-        }])
+        new CopyWebpackPlugin([
+            {
+                from: './src/assets/images',
+                to: 'assets/images'
+            },
+            {
+                from: './src/fonts',
+                to: 'fonts'
+            }
+    ])
     ],
 
     module: {
@@ -67,6 +73,17 @@ module.exports = {
                         options: {
                             name:'[name].[ext]',
                             outputPath: 'assets/images'
+                        }
+                    }
+                ]
+            },
+            {
+                test: /\.(woff|woff2|ttf|otf|eot)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            outputPath: 'fonts'
                         }
                     }
                 ]
