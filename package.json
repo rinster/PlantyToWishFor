@@ -7,7 +7,8 @@
     "dev": "webpack --mode development",
     "build": "webpack --mode production",
     "server": "webpack-dev-server --mode development --open",
-    "mock:api": "json-server --watch db.json --port 8080"
+    "mock:api": "json-server --watch db.json --port 3000",
+    "start": "npm-run-all --parallel server mock:api"
   },
   "author": "Rinster",
   "license": "ISC",
@@ -23,6 +24,7 @@
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.13.0",
+    "npm-run-all": "^4.1.5",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^8.0.0",

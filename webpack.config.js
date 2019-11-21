@@ -12,7 +12,14 @@ module.exports = {
         filename: 'js/bundle.js'
     },
     devServer: { 
-        contentBase: './dist' 
+        contentBase: './dist',
+        proxy: {
+            '/api': {
+              target: 'http://localhost:3000',
+              pathRewrite: {'^/api' : ''},
+              secure: false
+            }
+        },
     },
     plugins: [ 
         new HtmlWebpackPlugin({
