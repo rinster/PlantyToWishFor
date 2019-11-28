@@ -1,0 +1,83 @@
+
+// FONT IMPORTS ====================================
+@font-face {
+    font-family: OswaldBold;
+    src: url('../../fonts/Oswald-Bold.ttf');
+}
+@font-face {
+    font-family: OswaldExtraLight;
+    src: url('../../fonts/Oswald-ExtraLight.ttf');
+}
+@font-face {
+    font-family: OswaldLight;
+    src: url('../../fonts/Oswald-Light.ttf');
+}
+@font-face {
+    font-family: OswaldMedium;
+    src: url('../../fonts/Oswald-Medium.ttf');
+}
+@font-face {
+    font-family: OswaldRegular;
+    src: url('../../fonts/Oswald-Regular.ttf');
+}
+@font-face {
+    font-family: OswaldSemiBold;
+    src: url('../../fonts/Oswald-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: RobotoCondensed-Bold;
+    src: url('../../fonts/RobotoCondensed-Bold.ttf');
+}
+@font-face {
+    font-family: RobotoCondensed-Light;
+    src: url('../../fonts/RobotoCondensed-Light.ttf');
+}
+@font-face {
+    font-family: RobotoCondensed-Regular;
+    src: url('../../fonts/RobotoCondensed-Regular.ttf');
+}
+
+// END FONT IMPORTS ====================================
+
+// BASE TYPOGRAPHY =====================================
+body {
+    font-family: RobotoCondensted-Light, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    /* font-size: 16px; */
+    line-height: 1.7;
+    color: $color-grey-dark;
+}
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+}
+
+.heading-secondary {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+
+}
+
+.heading-tertiary {
+    font-size: $default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.paragraph {
+    font-size: $default-font-size;
+
+    // Prevent extra spacing at last paragraph
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}
+
+// END BASE TYPOGRAPHY =====================================

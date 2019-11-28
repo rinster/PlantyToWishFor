@@ -1,15 +1,10 @@
-@font-face {
-    font-family: OpenSans;
-    src: url('../../fonts/OpenSans-Regular.ttf');
-}
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
 
-$h3-bg-color: pink;
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
 
-h3 {
-    color: white;
-    font-family: OpenSans;
-    font-size: 76px;
-    background-color: $h3-bg-color;
-    user-select: none;
-    backface-visibility: hidden;
-} 
+@import "pages/home";
