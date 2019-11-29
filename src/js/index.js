@@ -4,7 +4,8 @@ import { Header } from './models/header';
 // STYLING & ASSET IMPORT =============================
 import '../styles/scss/main.scss'; 
 
-import PMelano from '../assets/images/PMelano.jpg'; //image load test
+// IMAGE ASSET IMPORT ================================
+import Logo from '../assets/images/plant_logo.png';
 
 // FONT AWESOME IMPORT ===============================
 import '@fortawesome/fontawesome-free/js/fontawesome'
@@ -18,5 +19,5 @@ let firstHeading = header.getFirstHeading();
 console.log(firstHeading);
 
 
-//Image import test
-document.getElementById('PhiloMelano').setAttribute('src',PMelano)
+//Image import 
+document.getElementById('logo').setAttribute('src', Logo)

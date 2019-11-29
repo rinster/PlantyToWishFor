@@ -43,7 +43,7 @@
 // BASE TYPOGRAPHY =====================================
 body {
     font-family: RobotoCondensted-Light, Arial, Helvetica, sans-serif;
-    font-weight: 400;
+    //font-weight: 400;
     /* font-size: 16px; */
     line-height: 1.7;
     color: $color-grey-dark;
@@ -52,9 +52,16 @@ body {
 .heading-primary {
     color: $color-white;
     text-transform: uppercase;
+    font-family: OswaldSemiBold;
 
     backface-visibility: hidden;
     margin-bottom: 6rem;
+
+    &--sub {
+        color: $color-white;
+        text-transform: uppercase;
+        font-family: RobotoCondensed-Light;
+    }
 }
 
 .heading-secondary {
@@ -62,13 +69,14 @@ body {
     text-transform: uppercase;
     font-weight: 700;
     display: inline-block;
-
+    font-family: OswaldSemiBold;
 }
 
 .heading-tertiary {
     font-size: $default-font-size;
     font-weight: 700;
     text-transform: uppercase;
+    font-family: OswaldSemiBold;
 }
 
 .paragraph {

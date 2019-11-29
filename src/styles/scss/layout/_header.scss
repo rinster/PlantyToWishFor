@@ -1,0 +1,33 @@
+header {
+
+    .header_nav {
+        padding: 30px 40px;;
+        
+        display: flex;
+        align-self: stretch;
+
+        img {
+             height: 5.5rem;
+             width: 5.5rem;
+             margin-right: auto;
+        }
+
+        a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+            margin-left: 3rem;
+            
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $color-white;
+            letter-spacing: .2em;
+            font-size: 1.6rem;
+
+            &:hover {
+                color: $color-primary-light;
+            }
+        }
+    }
+}

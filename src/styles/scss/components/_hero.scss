@@ -1,0 +1,33 @@
+.hero-tribute {
+    
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-grey-dark, 0.5),
+        rgba($color-grey-dark-3, 0.6)),
+        url('/assets/images/jungle_background_2000x1400.jpg');
+    
+    //Parallax effect
+    height: 75vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    position: relative;
+
+    .heading-primary {
+        font-size: 7.6rem;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    
+        &--sub {
+            font-size: 3.6rem;
+            position: absolute;
+            top: 57%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
