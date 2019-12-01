@@ -1,5 +1,5 @@
 import Plants from './models/Plants';
-import { elements }  from './views/base'
+
 
 // STYLING & ASSET IMPORT =============================
 import '../styles/scss/main.scss'; 
