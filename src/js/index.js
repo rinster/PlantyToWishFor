@@ -1,31 +1,20 @@
-// CLASS IMPORT =======================================
-import { Header } from './models/header';
 import Plants from './models/Plants';
 import { elements }  from './views/base'
 
 // STYLING & ASSET IMPORT =============================
 import '../styles/scss/main.scss'; 
-
-// IMAGE ASSET IMPORT ================================
 import Logo from '../assets/images/plant_logo.png';
 
-// FONT AWESOME IMPORT ===============================
 import '@fortawesome/fontawesome-free/js/fontawesome'
 import '@fortawesome/fontawesome-free/js/solid'
 import '@fortawesome/fontawesome-free/js/regular'
 import '@fortawesome/fontawesome-free/js/brands'
 
-
-let header = new Header();
-let firstHeading = header.getFirstHeading();
-console.log(firstHeading);
-
-
 //Image import 
 document.getElementById('logo').setAttribute('src', Logo);
 
-// =================== EXPOSE STATE ==================================
-// SIMPLE STATE MANAGEMENT - like REDUX
+// =================== STATE MANAGEMENT ===============================
+// SIMPLE STATE MANAGEMENT 
 /**  GLOBAL STATE OF THE APP
   * - Search Object data
   * - Current recipe object data
