@@ -13,8 +13,10 @@
         //max-width: 35rem;
 
         & img {
-            height: 100%;
-            width: 25rem;
+            max-width: 50rem;
+            max-height: 30rem;
+            object-fit: cover;
+            filter: opacity(85%);
         }
     }
 }

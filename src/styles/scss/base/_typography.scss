@@ -50,9 +50,10 @@ body {
 }
 
 .heading-primary {
-    color: $color-white;
+    color: $color-light-black;
     text-transform: uppercase;
     font-family: OswaldSemiBold;
+    font-size: 3.5rem;
 
     backface-visibility: hidden;
     margin-bottom: 6rem;
@@ -88,6 +89,7 @@ body {
     font-weight: 700;
     display: inline-block;
     font-family: OswaldSemiBold;
+    color: $color-primary-dark;;
 }
 
 .heading-tertiary {
@@ -95,6 +97,7 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     font-family: OswaldLight;
+    color: $color-primary-dark;;
 }
 
 .paragraph {
