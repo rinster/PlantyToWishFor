@@ -7,7 +7,7 @@
         "care_level": "Moderate",
         "care_directions": "Can be grown indoors or outside in a protected area so as to protect the leaves from wind damage. If grown inside, it should be misted at least once daily to provide the humidity it likes. I've been feeding it every month half-strength with Jack's 20/20/20 and have the first bloom coming now. Potted it in a mix of Orchid Bark, extra chunky perlite with a little potting soil mixed in. It needs excellent drainage, so take care to make sure your mix allows water to drain through.",
         "url_photo": "https://res.cloudinary.com/duqsjdo0j/image/upload/v1574729389/PlantyToWishFor/anthurium_clarinarvium.jpg",
-        "price_level": "2"
+        "price": 75.00
       },
       {
         "common_name": "Monstera Albo",
@@ -16,7 +16,7 @@
         "care_level": "Hard",
         "care_directions": "Temperatures between 65-80ºF (18-27ºC) are ideal. Lower than 65ºF (18Cº) will slow down this plants growth and below 50ºF (10ºC) will stop growth. A fairly bright room or bright with plenty of shade is best. Direct sunlight will damage the leaves and not enough light can slow growth down. A peat based potting soil mix with perlite or sand is ideal. Soil that drains well is needed.",
         "url_photo": "https://res.cloudinary.com/duqsjdo0j/image/upload/v1574729390/PlantyToWishFor/monster_albo.png",
-        "price_level": "4"
+        "price": 300.00
       },
       {
         "common_name": "Black Gold Philodendron",
@@ -25,7 +25,7 @@
         "care_level": "Easy",
         "care_directions": "Once it begins to climb a tree or other vertical object, the leaves increase in size and come into their full glory. This philodendron needs 4-5’ of vertical growing space to develop into its mature form. Black Gold Philodendron prefers to be grown in warm temperatures and indirect lighting near a window. We are shipping plants in the juvenile form.",
         "url_photo": "https://res.cloudinary.com/duqsjdo0j/image/upload/v1574729389/PlantyToWishFor/philodendron_melanochrysum.jpg",
-        "price_level": "3"
+        "price": 125.00
       },
       {
         "common_name": "Philodendron Gloriosum",
@@ -34,7 +34,7 @@
         "care_level": "Easy",
         "care_directions": "Shade to partial shade, temp. 45 to 95 degrees, 3 to 6 feet tall, allow getting slightly dry between watering",
         "url_photo": "https://res.cloudinary.com/duqsjdo0j/image/upload/v1574729389/PlantyToWishFor/philodendron_gloriosum.jpg",
-        "price_level": "2"
+        "price": 90.00
       },
       {
         "common_name": "Philodendron Verrucosum",
@@ -43,7 +43,7 @@
         "care_level": "Easy",
         "care_directions": "shade, temp 55 to 95 degrees, climb 6 to 8 feet tall, allow to get slightly dry between watering.",
         "url_photo": "https://res.cloudinary.com/duqsjdo0j/image/upload/v1574729389/PlantyToWishFor/philodendron_verrucosum.jpg",
-        "price_level": "4"
+        "price": 120.00
       },
       {
         "common_name": "Spiritus Sancti",
@@ -52,7 +52,7 @@
         "care_level": "Easy",
         "care_directions": "Provide high-humidity, bright-indirect light, and a moss pole to climb. Water sparingly and pot it in aroid soil mix",
         "url_photo": "https://res.cloudinary.com/duqsjdo0j/image/upload/v1574729389/PlantyToWishFor/philodendron_spiritusSancti.jpg",
-        "price_level": "4"
+        "price": 1450.00
       }
     ]
   }
