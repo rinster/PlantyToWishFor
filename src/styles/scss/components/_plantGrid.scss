@@ -1,0 +1,20 @@
+.plant__grid {
+    font-size: 1.5rem;
+    flex-grow: 3;
+
+    &__plants {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        grid-gap: 6rem;
+        grid-auto-rows: 40rem;
+    }
+
+    &__plantCard{
+        //max-width: 35rem;
+
+        & img {
+            height: 100%;
+            width: 25rem;
+        }
+    }
+}

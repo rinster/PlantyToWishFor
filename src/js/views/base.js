@@ -2,5 +2,5 @@
 
 // DOM elements needed in our app ===================
 export const elements = {
-    plantList: document.querySelector('plant__grid'),
+    plantList: document.querySelector('.plant__grid__plants'),
 };

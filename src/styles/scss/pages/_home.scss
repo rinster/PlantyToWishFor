@@ -3,12 +3,10 @@ main {
 
     display: flex;
 
-    .plant__grid {
-        font-size: 1.5rem;
-
-    }
+    
 
     .plant__wishlist {
         font-size: 1.5rem;
+        flex-grow: 1;
     }
 }

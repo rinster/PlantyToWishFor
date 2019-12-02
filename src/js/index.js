@@ -1,5 +1,5 @@
 import Plants from './models/Plants';
-
+import * as plantsView from './views/plantsView';
 
 // STYLING & ASSET IMPORT =============================
 import '../styles/scss/main.scss'; 
@@ -31,7 +31,8 @@ const controlPlants = async () => {
     
     try {
         await state.plants.getPlants();
-        console.log(state.plants.results);
+        
+        plantsView.renderResults(state.plants.results);
     } catch(err) {
         console.log("Something went wrong getting the plants");
     }
