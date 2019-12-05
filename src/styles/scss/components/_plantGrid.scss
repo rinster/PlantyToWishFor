@@ -9,14 +9,33 @@
         grid-auto-rows: 40rem;
     }
 
-    &__plantCard{
+    &__plantCard {
         //max-width: 35rem;
+        position: relative;
 
         & img {
             max-width: 50rem;
             max-height: 30rem;
             object-fit: cover;
-            filter: opacity(85%);
+            filter: grayscale(25%);
+
+        }
+
+        &__plant__like {
+            position: absolute; //relative to &__plantCard
+            top: 50px;
+            left: 10px;
+
+            border: none;
+            background-color: transparent;
+
+            & svg {
+            height: 3.5rem;
+            width: 3.5rem;
+            outline: none;
+            fill: $color-white;
+            filter: drop-shadow(20px 20px 15px rgba(0,0,0,0.9));
+            }
         }
     }
 }

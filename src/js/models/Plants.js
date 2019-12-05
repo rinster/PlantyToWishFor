@@ -11,7 +11,7 @@ export default class Plants {
             //console.log('results', this.results)
         } catch (error) {
             console.log(error);
-            alert('Something is wrong with the API')
+            alert('Something is wrong with the GET Plants API')
         } 
     }
 
