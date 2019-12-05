@@ -7,7 +7,6 @@ const renderPlants = rarePlant => {
     const markup = `
         <div class="plant__grid__plantCard u-margin-bottom-medium">
             <h3 class="heading-tertiary u-margin-bottom-small">${rarePlant.common_name}</h3>
-            
             <img src="${rarePlant.url_photo}" alt="${rarePlant.common_name}">
             <button class="plant__grid__plantCard__plant__like">
                 <svg>

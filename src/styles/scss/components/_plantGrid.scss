@@ -10,28 +10,28 @@
     }
 
     &__plantCard {
-        //max-width: 35rem;
         position: relative;
 
         & img {
             max-width: 50rem;
             max-height: 30rem;
             object-fit: cover;
-            filter: grayscale(25%);
+            filter: grayscale(35%);
 
         }
 
         &__plant__like {
             position: absolute; //relative to &__plantCard
-            top: 50px;
+            top: 55px;
             left: 10px;
 
             border: none;
             background-color: transparent;
+            cursor: pointer;
 
             & svg {
             height: 3.5rem;
-            width: 3.5rem;
+            width: 3rem;
             outline: none;
             fill: $color-white;
             filter: drop-shadow(20px 20px 15px rgba(0,0,0,0.9));
