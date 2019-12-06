@@ -26,13 +26,14 @@
             left: 10px;
 
             border: none;
+            outline: none; //remove blue outline on click
             background-color: transparent;
             cursor: pointer;
 
             & svg {
             height: 3.5rem;
             width: 3rem;
-            outline: none;
+            
             fill: $color-white;
             filter: drop-shadow(20px 20px 15px rgba(0,0,0,0.9));
             }
