@@ -66,9 +66,9 @@ const controlLike = async (id) => {
         state.likes.results.care_level,
         state.likes.results.price
     );
-        
-    console.log(state.likes)
+    
     //Render UI
+    likesView.renderLikes(newLike);
 
 
 }
