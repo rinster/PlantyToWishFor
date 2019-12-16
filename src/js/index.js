@@ -47,7 +47,7 @@ window.addEventListener('load', controlPlants); //On page load, get plants from 
 // =================== LIKES CONTROLLER ===============================
 const controlLike = async (id) => {
     //Initialize state management for LIKES
-    state.likes = new Likes(id);
+    if(!state.likes) state.likes = new Likes(); //only initialize if it doesn't exist yet
     
     //Grab plant id
     const plantID = id; 
@@ -59,15 +59,17 @@ const controlLike = async (id) => {
         alert("something went wrong")
     }
 
-    //Add like
+    //Add like 
     const newLike = state.likes.addLike(
         plantID,
+        state.likes.results.common_name,
+        state.likes.results.care_level,
+        state.likes.results.price
+    );
         
-    )
-    
+    console.log(state.likes)
     //Render UI
 
-    // Store to State
 
 }
 
