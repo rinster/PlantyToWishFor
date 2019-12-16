@@ -5,10 +5,10 @@ import { elements }  from './base'
 const renderPlants = rarePlant => {
     
     const markup = `
-        <div class="plant__grid__plantCard u-margin-bottom-medium">
+        <div class="plant__grid__plantCard u-margin-bottom-medium" data-itemid="${rarePlant.id}">
             <h3 class="heading-tertiary u-margin-bottom-small">${rarePlant.common_name}</h3>
             <img src="${rarePlant.url_photo}" alt="${rarePlant.common_name}">
-            <button class="plant__grid__plantCard__plant__like">
+            <button class="plant__grid__plantCard__plantLike">
                 <svg>
                     <use href="assets/images/icons.svg#icon-heart-outlined"></use>
                 </svg>
@@ -19,7 +19,7 @@ const renderPlants = rarePlant => {
         
     `;
     //Insert the markup 
-    elements.plantList.insertAdjacentHTML('beforeend', markup);
+    elements.plantGridList.insertAdjacentHTML('beforeend', markup);
 };
 
 export const renderResults = plants => {
