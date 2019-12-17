@@ -15,9 +15,10 @@ export default class Likes {
         }
     }
 
-    addLike(id, name, careLevel, price) {
+    addLike(id, photo, name, careLevel, price) {
         const like ={ 
             id,
+            photo,
             name,
             careLevel,
             price

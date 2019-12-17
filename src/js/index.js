@@ -62,6 +62,7 @@ const controlLike = async (id) => {
     //Add like 
     const newLike = state.likes.addLike(
         plantID,
+        state.likes.results.url_photo,
         state.likes.results.common_name,
         state.likes.results.care_level,
         state.likes.results.price

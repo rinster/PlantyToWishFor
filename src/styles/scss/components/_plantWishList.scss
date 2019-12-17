@@ -1,0 +1,47 @@
+.plantWishlist {
+
+    &__container {
+        
+    }
+
+    &__list {
+        //padding: 0 1.5rem;
+
+        &__item {
+            padding: .7rem 0;
+            border-bottom: 1px solid $color-grey-light-3; 
+
+            display: flex;
+
+            & img {
+                height: 4.3rem;
+                width: 4.3rem;
+                border-radius: 50%;
+                margin-right: .85rem;
+            }
+
+            & p {
+                font-size: 1.3rem;
+                text-transform: uppercase;
+                letter-spacing: .075em;
+
+                display: flex;
+                align-self: center;
+                margin-right: auto;//push btn to the right
+            }
+
+            & button {
+                border: none;
+                outline: none; //remove blue outline on click
+                background-color: transparent;
+                cursor: pointer;
+                margin-left: .7rem;//push text for spacing
+
+                & svg {
+                    height: 1.8rem;
+                    width: 1.8rem;
+                }
+            }
+        }
+    }
+}
