@@ -37,7 +37,7 @@ const controlPlants = async () => {
     } catch(err) {
         console.log("Something went wrong getting the plants");
     }
-}
+};
 
 
 // EVENT LISTENER - GENERAL ====================================================
@@ -57,7 +57,7 @@ const controlLike = async (id) => {
         await state.likes.getPlantById(plantID);
     } catch (error) {
         alert("something went wrong")
-    }
+    };
 
     //Add like 
     const newLike = state.likes.addLike(
@@ -72,13 +72,27 @@ const controlLike = async (id) => {
     likesView.renderLikes(newLike);
 
 
-}
+};
 
 // EVENT LISTENER - LIKE <3 clicked ================================
 elements.plantGridList.addEventListener('click', e => {
     const id = e.target.closest('.plant__grid__plantCard').dataset.itemid;
     //console.log('plantID grabbed:',id)
     controlLike(id);
+});
+
+// EVENT LISTENER - WISHLIST =======================================
+elements.plantWishList.addEventListener('click', e => {
+    const id = e.target.closest('.plantWishlist__list__item').dataset.likeid;
+
+    if (e.target.matches('.btn__delete, .btn__delete *')) {
+        //console.log('Delete clicked')
+        
+        //Delete from UI
+        likesView.deleteItem(id);
+        //Delete from state
+        state.likes.deleteLike(id);
+    }
 });
 
 // EVENT LISTENER - LIKES ON LOAD ================================
