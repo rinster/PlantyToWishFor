@@ -32,7 +32,6 @@ const controlPlants = async () => {
     
     try {
         await state.plants.getPlants();
-        
         plantsView.renderResults(state.plants.results);
     } catch(err) {
         console.log("Something went wrong getting the plants");
@@ -76,17 +75,18 @@ const controlLike = async (id) => {
 
 // EVENT LISTENER - LIKE <3 clicked ================================
 elements.plantGridList.addEventListener('click', e => {
+    
     const id = e.target.closest('.plant__grid__plantCard').dataset.itemid;
-    //console.log('plantID grabbed:',id)
+    
     controlLike(id);
 });
 
 // EVENT LISTENER - WISHLIST =======================================
 elements.plantWishList.addEventListener('click', e => {
+    
     const id = e.target.closest('.plantWishlist__list__item').dataset.likeid;
 
     if (e.target.matches('.btn__delete, .btn__delete *')) {
-        //console.log('Delete clicked')
         
         //Delete from UI
         likesView.deleteItem(id);
