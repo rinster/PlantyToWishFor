@@ -51,26 +51,43 @@ const controlLike = async (id) => {
     //Grab plant id
     const plantID = id; 
    
-    //Get plant data by ID
-    try {
-        await state.likes.getPlantById(plantID);
-    } catch (error) {
-        alert("something went wrong")
-    };
+    // IF USER has NOT Liked the plant yet
+    if(!state.likes.isLiked(plantID)) {
+        //Get plant data by ID
+        try {
+            await state.likes.getPlantById(plantID);
+        } catch (error) {
+            alert("something went wrong")
+        };
 
-    //Add like 
-    const newLike = state.likes.addLike(
-        plantID,
-        state.likes.results.url_photo,
-        state.likes.results.common_name,
-        state.likes.results.care_level,
-        state.likes.results.price
-    );
+        //Add like 
+        const newLike = state.likes.addLike(
+            plantID,
+            state.likes.results.url_photo,
+            state.likes.results.common_name,
+            state.likes.results.care_level,
+            state.likes.results.price
+        );
+
+        // TO DO: Toggle heart button on
+        //likesView.toggleLikeBtn(true);
     
-    //Render UI
-    likesView.renderLikes(newLike);
+        //Add to UI
+        likesView.renderLikes(newLike);
 
+    } else {
+    // ELSE USER has already liked the plant
 
+        //Remove from UI
+        likesView.deleteItem(plantID);
+
+        // TO DO: Toggle heart button off
+        //likesView.toggleLikeBtn(false)
+
+        // Remove from state
+        state.likes.deleteLike(plantID)
+    }
+    
 };
 
 // EVENT LISTENER - LIKE <3 clicked ================================
@@ -98,8 +115,12 @@ elements.plantWishList.addEventListener('click', e => {
 // EVENT LISTENER - LIKES ON LOAD ================================
 window.addEventListener('load', ()=> {
     //Initialize state management for LIKES
-    //state.likes = new Likes();
+    state.likes = new Likes();
 
-    //TO DO: Render the existing likes
+    //Restore likes - Restore liked recipes on page load
+    state.likes.readStorage();
+
+    //Render the existing likes
+    state.likes.likes.forEach(like => likesView.renderLikes(like));
 
 });

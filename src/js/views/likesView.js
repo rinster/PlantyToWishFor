@@ -1,5 +1,11 @@
 import { elements } from './base';
 
+
+export const toggleLikeBtn = isLiked => {
+    const iconString = isLiked ? 'icon-heart' : 'icon-heart-outlined';
+    elements.plantLikeBtn.setAttribute('href', `assets/images/icons.svg#${iconString}`)
+};
+
 export const renderLikes = like => {
 
     const markup = `
@@ -22,4 +28,4 @@ export const deleteItem = id => {
     //console.log('item deleting', id)
     const item = document.querySelector(`[data-likeid="${id}"]`);
     if(item) item.parentElement.removeChild(item);
-}
+};

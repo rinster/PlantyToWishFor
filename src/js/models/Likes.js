@@ -24,6 +24,7 @@ export default class Likes {
             price
         }
         this.likes.push(like);
+        this.persistData()
         return like;
     }
 
@@ -31,6 +32,23 @@ export default class Likes {
         const index = this.likes.findIndex(el => el.id === id);
         this.likes.splice(index, 1);
 
-        // TO DO: Persist this data
+        this.persistData()
+    }
+
+    //Check if item is liked
+    isLiked(id) {
+        return this.likes.findIndex(el => el.id === id) !== -1;
+    }
+
+    persistData() {
+        localStorage.setItem('likes', JSON.stringify(this.likes));
+    }
+
+    //Retrieve likes stored in local storage
+    readStorage() {
+        const storage = JSON.parse(localStorage.getItem('likes'));
+        
+        // Restore likes from the localStorage
+        if(storage) this.likes = storage;
     }
 }

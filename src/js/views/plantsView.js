@@ -2,7 +2,7 @@ import { elements }  from './base'
 
 //This function will only print one plant
 // The rendering will happen here
-const renderPlants = rarePlant => {
+export const renderPlants = (rarePlant, isLiked) => {
     
     const markup = `
         <div class="plant__grid__plantCard u-margin-bottom-medium" data-itemid="${rarePlant.id}">
@@ -10,7 +10,7 @@ const renderPlants = rarePlant => {
             <img src="${rarePlant.url_photo}" alt="${rarePlant.common_name}">
             <button class="plant__grid__plantCard__plantLike">
                 <svg>
-                    <use href="assets/images/icons.svg#icon-heart-outlined"></use>
+                    <use href="assets/images/icons.svg#icon-heart${isLiked ? '' : '-outlined'}"></use>
                 </svg>
             </button>
             <p>Care Level: ${rarePlant.care_level}</p>
