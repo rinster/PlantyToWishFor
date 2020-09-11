@@ -32,7 +32,7 @@ const controlPlants = async () => {
     
     try {
         await state.plants.getPlants();
-        plantsView.renderResults(state.plants.results);
+        plantsView.renderResults(state.plants.results, false);
     } catch(err) {
         console.log("Something went wrong getting the plants");
     }
@@ -40,7 +40,7 @@ const controlPlants = async () => {
 
 
 // EVENT LISTENER - GENERAL ====================================================
-window.addEventListener('load', controlPlants); //On page load, get plants from API
+// window.addEventListener('load', controlPlants); //On page load, get plants from API
 
 
 // =================== LIKES CONTROLLER ===============================
@@ -120,7 +120,9 @@ window.addEventListener('load', ()=> {
     //Restore likes - Restore liked recipes on page load
     state.likes.readStorage();
 
+    controlPlants()
+
     //Render the existing likes
-    state.likes.likes.forEach(like => likesView.renderLikes(like));
+    //state.likes.likes.forEach(like => likesView.renderLikes(like));
 
 });
