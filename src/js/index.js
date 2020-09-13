@@ -53,9 +53,14 @@ const handleLikeButtons = () => {
             <svg>
                 <use href = "assets/images/icons.svg#icon-heart"></>
             </svg >`;
-            button.disabled = true;
-            
-         }
+            button.disabled = true; 
+        } else {
+            button.innerHTML = `
+                <svg>
+                    <use href = "assets/images/icons.svg#icon-heart-outlined"></>
+                </svg >`;
+            button.disabled = true; 
+        }
     });
 
     console.log(state.likes);
@@ -68,7 +73,9 @@ const controlLike = async (id) => {
     
     //Grab plant id
     const plantID = id; 
-   
+    
+    console.log('buttonsDOM:', state.buttonsDOM);
+
     // IF USER has NOT Liked the plant yet
     if(!state.likes.isLiked(plantID)) {
         //Get plant data by ID
@@ -107,7 +114,9 @@ elements.plantGridList.addEventListener('click', e => {
     
     const id = e.target.closest('.plant__grid__plantCard__plantLike').dataset.itemid;
     
-    controlLike(id);
+    controlLike(id).then(() => {
+        handleLikeButtons()
+    });
 });
 
 // EVENT LISTENER - WISHLIST =======================================
@@ -132,7 +141,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     //Restore likes - Restore liked recipes on page load
     state.likes.readStorage();
 
-     //Render the existing likes
+    //Render the existing likes
     state.likes.likes.forEach(like => likesView.renderLikes(like));
 
 
