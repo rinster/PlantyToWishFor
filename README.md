@@ -1,6 +1,8 @@
-# Planty To Wish For
+# Planty To Wish For - IN PROGRESS
 
-This is a fun project for me to practice DOM manipulation with no front-end frameworks. Just pure vanilla JS, SASS, webpack and babel. I built this entire project from scratch. :) 
+This is a fun project for me to practice DOM manipulation with no front-end frameworks. Just pure vanilla JS, SASS, webpack and babel. The purpose of this project was to cement my knowledge of DOM manipulation, JavaScript and understand how front-end frameworks work under the hood.
+
+I built this entire project from scratch. :) 
 
 ## Installation and Setup
 Installing this project is easy. Simply download this github repo or clone to your local machine.
@@ -18,18 +20,13 @@ Lastly, start up the project with the script below! Easy peezy :)
 npm run start
 ```
 
-## Project Structure
-...Project folder structure here and short summary
-
 ## Additionally Planned Features:
-* [ ] On page load, collect user input budget of their for the month
-* [ ] Add a 'Bought List' Component
-* [ ] 'Move to Sold' feature
+* [ ] On page load, collect user input budget
+* [ ] Print PDF of wishlist
+* [ ] Dark mode UI toggle 
+* [ ] List to move in side drawer on mobile view
 * [ ] Dynamic update on realtime Budget calculator for users to track if they are staying within budget
 * [ ] Allow user to manipulate dollar value of plant to take into consideration the changing market prices
-
-## Final Thoughts and Improvement
-...Things I can improve when project is completed
 
 ---
 Assets courtesy of:
