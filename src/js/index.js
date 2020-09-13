@@ -21,6 +21,7 @@ document.getElementById('logo').setAttribute('src', Logo);
 /**  GLOBAL STATE OF THE APP
   * - Rare Plant Data
   * - Liked Plants data
+  * - Button Like state
 **/
 const state = {};
 window.state = state; //expose the state to the window
@@ -38,12 +39,29 @@ const controlPlants = async () => {
     }
 };
 
+// =================== LIKES BUTTON CONTROLLER ===============================
+const handleLikeButtons = () => {
+    const buttons = [...document.querySelectorAll('.plant__grid__plantCard__plantLike')];
+    console.log(buttons);
+    state.buttonsDOM = buttons;
+    buttons.forEach(button => {
+        let id = button.dataset.itemid;
+        //console.log('button id:', id);
+         if(state.likes.isLiked(id)) {
+            //console.log('button is liked already', button);
+            button.innerHTML = `
+            <svg>
+                <use href = "assets/images/icons.svg#icon-heart"></>
+            </svg >`;
+            button.disabled = true;
+            
+         }
+    });
 
-// EVENT LISTENER - GENERAL ====================================================
-// window.addEventListener('load', controlPlants); //On page load, get plants from API
+    console.log(state.likes);
+}
 
-
-// =================== LIKES CONTROLLER ===============================
+// =================== LIKES LIST CONTROLLER ===============================
 const controlLike = async (id) => {
     //Initialize state management for LIKES
     if(!state.likes) state.likes = new Likes(); //only initialize if it doesn't exist yet
@@ -68,11 +86,8 @@ const controlLike = async (id) => {
             state.likes.results.care_level,
             state.likes.results.price
         );
-
-        // TO DO: Toggle heart button on
-        //likesView.toggleLikeBtn(true);
     
-        //Add to UI
+        //Add to UI List
         likesView.renderLikes(newLike);
 
     } else {
@@ -80,9 +95,6 @@ const controlLike = async (id) => {
 
         //Remove from UI
         likesView.deleteItem(plantID);
-
-        // TO DO: Toggle heart button off
-        //likesView.toggleLikeBtn(false)
 
         // Remove from state
         state.likes.deleteLike(plantID)
@@ -93,7 +105,7 @@ const controlLike = async (id) => {
 // EVENT LISTENER - LIKE <3 clicked ================================
 elements.plantGridList.addEventListener('click', e => {
     
-    const id = e.target.closest('.plant__grid__plantCard').dataset.itemid;
+    const id = e.target.closest('.plant__grid__plantCard__plantLike').dataset.itemid;
     
     controlLike(id);
 });
@@ -113,16 +125,20 @@ elements.plantWishList.addEventListener('click', e => {
 });
 
 // EVENT LISTENER - LIKES ON LOAD ================================
-window.addEventListener('load', ()=> {
+document.addEventListener('DOMContentLoaded', ()=> {
     //Initialize state management for LIKES
     state.likes = new Likes();
 
     //Restore likes - Restore liked recipes on page load
     state.likes.readStorage();
 
-    controlPlants()
+     //Render the existing likes
+    state.likes.likes.forEach(like => likesView.renderLikes(like));
 
-    //Render the existing likes
-    //state.likes.likes.forEach(like => likesView.renderLikes(like));
 
+    controlPlants().then(() => {
+        handleLikeButtons();
+    });
+
+   
 });

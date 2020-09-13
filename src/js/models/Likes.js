@@ -51,4 +51,5 @@ export default class Likes {
         // Restore likes from the localStorage
         if(storage) this.likes = storage;
     }
+
 }
