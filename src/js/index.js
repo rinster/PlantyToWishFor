@@ -40,7 +40,7 @@ const controlPlants = async () => {
 };
 
 // =================== LIKES BUTTON CONTROLLER ===============================
-const handleLikeButtons = () => {
+const handleLikeButtonsOnLoad = () => {
     const buttons = [...document.querySelectorAll('.plant__grid__plantCard__plantLike')];
     console.log(buttons);
     state.buttonsDOM = buttons;
@@ -53,13 +53,11 @@ const handleLikeButtons = () => {
             <svg>
                 <use href = "assets/images/icons.svg#icon-heart"></>
             </svg >`;
-            button.disabled = true; 
         } else {
             button.innerHTML = `
                 <svg>
                     <use href = "assets/images/icons.svg#icon-heart-outlined"></>
                 </svg >`;
-            button.disabled = true; 
         }
     });
 
@@ -74,7 +72,7 @@ const controlLike = async (id) => {
     //Grab plant id
     const plantID = id; 
     
-    console.log('buttonsDOM:', state.buttonsDOM);
+    //console.log('buttonsDOM:', state.buttonsDOM);
 
     // IF USER has NOT Liked the plant yet
     if(!state.likes.isLiked(plantID)) {
@@ -97,10 +95,22 @@ const controlLike = async (id) => {
         //Add to UI List
         likesView.renderLikes(newLike);
 
+        let button = getSingleButton(plantID);
+        button.innerHTML = `
+                <svg>
+                    <use href = "assets/images/icons.svg#icon-heart"></>
+                </svg >`;
+
     } else {
     // ELSE USER has already liked the plant
 
-        //Remove from UI
+        let button = getSingleButton(plantID);
+        button.innerHTML = `
+                <svg>
+                    <use href = "assets/images/icons.svg#icon-heart-outlined"></>
+                </svg >`;
+
+        //Remove from UI - wishlist
         likesView.deleteItem(plantID);
 
         // Remove from state
@@ -109,14 +119,16 @@ const controlLike = async (id) => {
     
 };
 
+const getSingleButton = (id) => {
+    return state.buttonsDOM.find(button => button.dataset.itemid === id);
+}
+
 // EVENT LISTENER - LIKE <3 clicked ================================
 elements.plantGridList.addEventListener('click', e => {
     
     const id = e.target.closest('.plant__grid__plantCard__plantLike').dataset.itemid;
     
-    controlLike(id).then(() => {
-        handleLikeButtons()
-    });
+    controlLike(id);
 });
 
 // EVENT LISTENER - WISHLIST =======================================
@@ -125,11 +137,19 @@ elements.plantWishList.addEventListener('click', e => {
     const id = e.target.closest('.plantWishlist__list__item').dataset.likeid;
 
     if (e.target.matches('.btn__delete, .btn__delete *')) {
+
+        //Handle toggle heart like
+        let button = getSingleButton(id);
+        button.innerHTML = `
+                <svg>
+                    <use href = "assets/images/icons.svg#icon-heart-outlined"></>
+                </svg >`;
         
-        //Delete from UI
-        likesView.deleteItem(id);
         //Delete from state
         state.likes.deleteLike(id);
+        //Delete from UI List
+        likesView.deleteItem(id);
+        
     }
 });
 
@@ -146,8 +166,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
 
 
     controlPlants().then(() => {
-        handleLikeButtons();
+        handleLikeButtonsOnLoad();
     });
-
-   
 });
