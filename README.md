@@ -1,4 +1,4 @@
-# Planty To Wish For - IN PROGRESS
+# Planty To Wish For - IN PROGRESS - Ongoing
 
 This is a fun project for me to practice DOM manipulation with no front-end frameworks. Just pure vanilla JS, SASS, webpack and babel. The purpose of this project was to cement my knowledge of DOM manipulation, JavaScript and understand how front-end frameworks work under the hood.
 
@@ -21,13 +21,16 @@ npm run start
 ```
 
 ## Additionally Planned Features:
-* [ ] On page load, collect user input budget
+* [x] Wish list with toggle heart feature
+* [x] LocalStorage session to persist wish list
 * [ ] Print PDF of wishlist
 * [ ] Dark mode UI toggle 
 * [ ] List to move in side drawer on mobile view
+* [ ] Modal popup for plant information with [API Call](https://trefle.io/)
+* [ ] On page load, collect user input budget
 * [ ] Dynamic update on realtime Budget calculator for users to track if they are staying within budget
 * [ ] Allow user to manipulate dollar value of plant to take into consideration the changing market prices
-
+* [ ] Lazy load for plant images
 ---
 Assets courtesy of:
 - Fontawesome
