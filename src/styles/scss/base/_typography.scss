@@ -68,6 +68,17 @@ body {
         position: absolute;
         top: 45%;
         left: 50%;
+
+        @include respond(tab-land) {
+            font-size: 6rem;
+            top: 40%
+        }
+        @include respond(tab-port) {
+            font-size: 5.7rem;
+        }
+        @include respond(phone) {
+            font-size: 4rem;
+        }
     }
         
     &--sub {
@@ -80,6 +91,19 @@ body {
         top: 57%;
         left: 50%;
         transform: translate(-50%, -50%);
+
+        @include respond(tab-land) {
+            font-size: 3rem;
+            top: 50%
+        }
+        @include respond(tab-port) {
+            font-size: 2.5rem;
+            top: 50%
+        }
+        @include respond(phone) {
+            font-size: 2.5rem;
+            top: 57%
+        }
     }
 }
 
