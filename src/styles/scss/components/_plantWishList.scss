@@ -1,7 +1,7 @@
 .plantWishlist {
 
     &__container {
-        
+        min-width: 25rem;
         @include respond(tab-port) {
             display: none;
         }
