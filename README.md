@@ -29,11 +29,11 @@ npm run start
 * [ ] Modal popup for plant information with [API Call](https://trefle.io/)
 * [ ] On page load, collect user input budget
 * [ ] Dynamic update on realtime Budget calculator for users to track if they are staying within budget
-* [ ] Allow user to manipulate dollar value of plant to take into consideration the changing market prices
 * [ ] Lazy load for plant images
 ---
 Assets courtesy of:
 - Fontawesome
+- Unsplash.com
 
 Designed and coded by me.
 <br />
